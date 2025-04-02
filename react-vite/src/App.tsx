@@ -1,15 +1,17 @@
-import { Footer } from "./components/Footer"
-import Navbar from "./components/navbar"
-import { Section } from "./components/Section"
+import {BrowserRouter, Routes, Route, Navigate} from 'react-router'
+import { Home } from "./pages/Home"
 
 
 function App() {
 
   return (
     <>
-      <Navbar/>
-      <Section/>
-      <Footer/>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Navigate to="/home" />} />
+          <Route path="/home" element={<Home />} />
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
